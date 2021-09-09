@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo chmod 777 $PYFILE | ./$PYFILE
+chmod +x $PYFILE | ./$PYFILE
