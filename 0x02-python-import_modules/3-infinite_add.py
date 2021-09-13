@@ -10,3 +10,7 @@ else:
     con = map(lambda x: int(x), args)
     sum_ = reduce(lambda x, y: x + y, con)
     print("{}".format(sum_))
+
+
+if __name__ == "__main__":
+    pass
