@@ -3,15 +3,14 @@
 def best_score(a_dictionary):
     if a_dictionary is None:
         return None
-    val_dict = []
+    val_list = []
     for k, v in a_dictionary.items():
-        val_dict.append(v)
-    i = 1
-    while (i < len(val_dict)):
-        if val_dict[i] > val_dict[i-1]:
-            b = val_dict[i]
-        else:
-            b = val_dict[i-1]
+        val_list.append(v)
+    b = 0
+    i = 0
+    while (i < len(val_list)):
+        if val_list[i] > b:
+            b = val_list[i]
         i += 1
     for k, v in a_dictionary.items():
         if v == b:

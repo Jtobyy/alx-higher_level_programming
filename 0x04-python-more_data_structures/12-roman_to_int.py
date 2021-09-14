@@ -11,6 +11,8 @@ def roman_to_int(roman_string):
         d = roman_string[idx + 1]
         val1 = get_val_from_dict(dict, c)
         val2 = get_val_from_dict(dict, d)
+        if val1 == 0 or val2 == 0:
+            break
         if val1 >= val2:
             number += val1
             idx += 1
@@ -19,7 +21,8 @@ def roman_to_int(roman_string):
             idx += 2
     if idx < len(roman_string):
         val = get_val_from_dict(dict, roman_string[len(roman_string) - 1])
-        number += val
+        if val != 0:
+            number += val
     return number
 
 
@@ -27,3 +30,5 @@ def get_val_from_dict(dict, key):
     for k, v in dict.items():
         if k == key:
             return dict[key]
+    else:
+        return 0
