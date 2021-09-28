@@ -6,7 +6,7 @@ has_been_print = safe_print_integer(value)
 if not has_been_print:
         print("{} is not an integer".format(value))
 
-value = -89
+value = -89.897
 has_been_print = safe_print_integer(value)
 if not has_been_print:
     print("{} is not an integer".format(value))
