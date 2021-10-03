@@ -9,7 +9,6 @@
 class Rectangle:
     """
     defines a Rectangle
-    
     >>> my_rectangle = Rectangle()
     >>> print(type(my_rectangle))
     <class '__main__.Rectangle'>
@@ -18,8 +17,7 @@ class Rectangle:
     """
     pass
 
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
-
-
