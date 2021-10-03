@@ -56,6 +56,8 @@ class Rectangle:
 
     def __str__(self):
         rect = []
+        if self.height == 0 or self.width ==0:
+            return ""
         for h in range(self.height):
             for w in range(self.width):
                 rect.append('#')
