@@ -66,6 +66,9 @@ class Rectangle:
         rect_str = ''.join([str(item) for item in rect])
         return rect_str
 
+    def __repr__(self):
+        return f"Rectangle({self.width}, {self.height})"
+
 
 if __name__ == "__main__":
     import doctest
