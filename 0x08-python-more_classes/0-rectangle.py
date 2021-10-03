@@ -2,7 +2,7 @@
 """oop rectangle practice
 
    >>> Rectangle
-   <class '0-rectangle.Rectangle'>
+   <class '__main__.Rectangle'>
 """
 
 
@@ -12,8 +12,14 @@ class Rectangle:
     
     >>> my_rectangle = Rectangle()
     >>> print(type(my_rectangle))
-    <class '0-rectangle.Rectangle'>
+    <class '__main__.Rectangle'>
     >>> print(my_rectangle.__dict__)
     {}
     """
     pass
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+
+
