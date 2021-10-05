@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-"""oop rectangle practice"""
+"""oop rectangle practice
+
+   >>> Rectangle
+   <class '0-rectangle.Rectangle'>
+"""
 
 
 class Rectangle:
     """
     defines a Rectangle
-    >>> Rectangle = __import__('0-rectangle').Rectangle
+    
     >>> my_rectangle = Rectangle()
     >>> print(type(my_rectangle))
     <class '0-rectangle.Rectangle'>
