@@ -2,7 +2,7 @@
 Rectangle = __import__('8-rectangle').Rectangle
 
 my_rectangle_1 = Rectangle(8, 4)
-my_rectangle_2 = Rectangle(2, 3)
+my_rectangle_2 = Rectangle(4, 8)
 
 if my_rectangle_1 is Rectangle.bigger_or_equal(my_rectangle_1, my_rectangle_2):
     print("my_rectangle_1 is bigger or equal to my_rectangle_2")
