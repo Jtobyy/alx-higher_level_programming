@@ -65,12 +65,16 @@ class Rectangle:
             return ""
         for h in range(self.height):
             for w in range(self.width):
-                rect.append(Rectangle.print_symbol)
+                try:
+                    rect.append(self.print_symbol)
+                except:
+                    rect.append(type(self).print_symbol)
             rect.append("\n")
         rect.pop()
-        rect_str = ''.join([item for item in rect])
+        rect_str = ''.join([str(item) for item in rect])
         return rect_str
 
+    
     def __repr__(self):
         return f"Rectangle({self.width}, {self.height})"
 
