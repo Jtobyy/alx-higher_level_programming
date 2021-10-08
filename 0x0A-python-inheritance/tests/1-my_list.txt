@@ -56,3 +56,9 @@ test suite for 1-my_list.py
 
 	>>> mylist.print_sorted()
 	[-8, -3, -1]
+
+	>>> mylist.clear()
+	>>> mylist
+	[]
+	>>> mylist.print_sorted()
+	[]
