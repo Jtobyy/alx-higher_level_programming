@@ -47,4 +47,7 @@ TypeError: 2 must be an integer
 >>> bg.integer_validator(age, None)
 Traceback (most recent call last):
 TypeError: 2 must be an integer
+>>> bg.integer_validator(age, False)
+Traceback (most recent call last):
+ValueError: 2 must be greater than 0
 >>>
