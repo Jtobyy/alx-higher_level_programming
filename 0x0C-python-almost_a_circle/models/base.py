@@ -3,6 +3,7 @@
 import json
 
 
+
 class Base:
     '''Base class'''
     __nb_objects = 0
@@ -23,8 +24,19 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         '''writes the JSON string representation of list_objs to a file'''
-        print(cls.__name__)
+        ret_list = []
         filename = cls.__name__ + '.json'
         with open(filename, 'w+') as f:
-            dict_ = cls.to_dictionary()
-            f.write(to_json_string(dict_))
+            for instance in list_objs:
+                dict_ = instance.to_dictionary()
+                ret_list.append(dict_)
+            f.write(Base.to_json_string(ret_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        '''returns the list of the JSON string representation json_string'''
+        if json_string is None:
+            return "[]"
+        else:
+            ret_obj = json.loads(json_string)
+            return ret_obj
