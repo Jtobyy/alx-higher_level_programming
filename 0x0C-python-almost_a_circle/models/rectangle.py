@@ -93,12 +93,6 @@ class Rectangle(Base):
         rect_str = "".join([str(item) for item in rect])
         print(rect_str)
 
-    def __str__(self):
-        """override the __str__ method of a class"""
-        str_ = f"[Rectangle] ({self.id}) {self.x}/{self.y} - \
-        {self.width}/{self.height}"
-        return (str_)
-
     def update(self, *args, **kwargs):
         """Updates the class Rectangle by assigning an argument
         to each attribute"""
