@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Defines the Rectangle class"""
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -12,7 +12,7 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
- 
+
     @property
     def width(self):
         """getter property for width"""
@@ -22,11 +22,11 @@ class Rectangle(Base):
     def width(self, value):
         """setter for width"""
         if not isinstance(value, int):
-                raise TypeError("width must be an integer")
+            raise TypeError("width must be an integer")
         elif value <= 0:
-                raise ValueError("width must be > 0")
+            raise ValueError("width must be > 0")
         else:
-                self.__width = value
+            self.__width = value
 
     @property
     def height(self):
@@ -37,12 +37,12 @@ class Rectangle(Base):
     def height(self, value):
         """setter for height"""
         if not isinstance(value, int):
-                raise TypeError("height must be an integer")
+            raise TypeError("height must be an integer")
         elif value <= 0:
-                raise ValueError("height must be > 0")
+            raise ValueError("height must be > 0")
         else:
-                self.__height = value
-   
+            self.__height = value
+
     @property
     def x(self):
         """getter for x"""
@@ -52,12 +52,12 @@ class Rectangle(Base):
     def x(self, value):
         """setter for x"""
         if not isinstance(value, int):
-                raise TypeError("x must be an integer")
+            raise TypeError("x must be an integer")
         elif value < 0:
-                raise ValueError("x must be >= 0")
+            raise ValueError("x must be >= 0")
         else:
-                self.__x = value
-            
+            self.__x = value
+
     @property
     def y(self):
         """getter for y"""
@@ -67,12 +67,12 @@ class Rectangle(Base):
     def y(self, value):
         """setter for y"""
         if not isinstance(value, int):
-                raise TypeError("y must be an integer")
+            raise TypeError("y must be an integer")
         elif value < 0:
-                raise ValueError("y must be >= 0")
+            raise ValueError("y must be >= 0")
         else:
-                self.__y = value
-            
+            self.__y = value
+
     def area(self):
         """Calculate the area of a Rectangle instance"""
         return (self.height * self.width)
@@ -82,7 +82,7 @@ class Rectangle(Base):
         rect = []
         for y in range(self.y):
             rect.append("\n")
-    
+
         for h in range(self.height):
             for x in range(self.x):
                 rect.append(" ")
@@ -95,7 +95,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """override the __str__ method of a class"""
-        str_ = f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        str_ = f"[Rectangle] ({self.id}) {self.x}/{self.y} - \
+        {self.width}/{self.height}"
         return (str_)
 
     def update(self, *args, **kwargs):
