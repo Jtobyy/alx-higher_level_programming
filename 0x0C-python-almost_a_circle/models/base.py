@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-'''Base class for other shapes'''
+"""Base class for other shapes"""
 import json
 
 
-
 class Base:
-    '''Base class'''
+    """Base class"""
     __nb_objects = 0
+
     def __init__(self, id=None):
         if id is not None:
             self.id = id
@@ -23,10 +23,10 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        '''writes the JSON string representation of list_objs to a file'''
+        """writes the JSON string representation of list_objs to a file"""
         ret_list = []
-        filename = cls.__name__ + '.json'
-        with open(filename, 'w+') as f:
+        filename = cls.__name__ + ".json"
+        with open(filename, "w+") as f:
             for instance in list_objs:
                 dict_ = instance.to_dictionary()
                 ret_list.append(dict_)
@@ -34,7 +34,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        '''returns the list of the JSON string representation json_string'''
+        """returns the list of the JSON string representation json_string"""
         if json_string is None:
             return "[]"
         else:
