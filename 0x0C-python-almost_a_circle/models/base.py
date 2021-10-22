@@ -27,6 +27,9 @@ class Base:
         ret_list = []
         filename = cls.__name__ + ".json"
         with open(filename, "w+") as f:
+            if (list_objs == None):
+                f.write(Base.to_json_string(None))
+                return
             for instance in list_objs:
                 dict_ = instance.to_dictionary()
                 ret_list.append(dict_)
@@ -40,3 +43,26 @@ class Base:
         else:
             ret_obj = json.loads(json_string)
             return ret_obj
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+        if cls.__name__ == 'Rectangle':
+            dummy = cls(2, 4)
+        elif cls.__name__ == 'Square':
+            dummy = cls(2)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        list_of_instances = []
+        filename = cls.__name__+".json"
+        with open(filename, 'r') as f:
+            instance_ = f.read()
+            obj = cls.from_json_string(instance_)
+            for instance in obj:
+                obj_copy = cls.create(**instance)
+                list_of_instances.append(obj_copy)
+        return list_of_instances

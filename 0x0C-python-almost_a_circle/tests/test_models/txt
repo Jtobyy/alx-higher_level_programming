@@ -1,0 +1,40 @@
+    
+    
+
+not used
+def test_get_private_attrs(self):
+        '''Checks if attributes meant to be private are private'''
+        with self.assertRaises('AttributeError'):
+            r1.__width
+        with self.assertRaises('AttributeError'):
+            r1.__height
+        with self.assertRaises('AttributeError'):
+            r1.__x
+        with self.assertRaises('AttributeError'):
+            r1.__y
+        with self.assertRaises('AttributeError'):
+            r1.width
+        with self.assertRaises('AttributeError'):
+            r1.height
+        with self.assertRaises('AttributeError'):
+            r1.x
+        with self.assertRaises('AttributeError'):
+            r1.y
+	    
+Square not used
+    def test_get_attrs_with_getters(self):
+        """Checks if getters are implemented for private attributes"""
+        self.assertEqual(s1.get_size(), 2)
+        self.assertEqual(s1.get_x(), 0)
+        self.assertEqual(s1.get_y(), 0)
+
+    def test_setters_work_for_attrs(self):
+        """Checks if setters are implemented for private attributes"""
+        s1.set_size(4)
+        self.assertEqual(s1.get_size(), 4)
+        self.assertEqual(s1.get_width(), 4)
+        self.assertEqual(s1.get_height(), 4)
+        s1.set_x(2)
+        self.assertEqual(s1.get_x(), 2)
+        s1.set_y(2)
+        self.assertEqual(s1.get_y(), 2)

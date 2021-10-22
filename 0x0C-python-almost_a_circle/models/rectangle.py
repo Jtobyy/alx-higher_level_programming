@@ -92,11 +92,12 @@ class Rectangle(Base):
         rect.pop()
         rect_str = "".join([str(item) for item in rect])
         print(rect_str)
+        return(rect_str)
 
     def __str__(self):
         """override the __str__ method of a class"""
-        str_ = f"[Rectangle] ({self.id}) {self.x}/{self.y} - \
-{self.width}/{self.height}"
+        str_ = f"""[Rectangle] ({self.id}) {self.x}/{self.y} - \
+{self.width}/{self.height}"""
         return (str_)
 
     def update(self, *args, **kwargs):
