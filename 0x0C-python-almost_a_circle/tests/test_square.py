@@ -9,19 +9,6 @@ from models.base import Base
 
 
 class TestSquare(unittest.TestCase):
-    def test_base_id_does_not_reset(self):
-        """Checks if Square class has access to Base class's id
-           attribute and Base is aware"""
-        self.assertEqual(Base().id, 1)
-        self.assertEqual(Rectangle(2, 2).id, 2)
-
-    def test_get_id_from_base(self):
-        """Checks if Square class has access to Base class's id
-           attribute"""
-        s1 = Square(2, id=1)
-        self.assertEqual(s1.id, 1)
-        self.assertEqual(Square(2).id, 3)
-
     def test_super(self):
         """Tries to check if Square inherits from Rectangle"""
         s1 = Square(2)
@@ -29,9 +16,23 @@ class TestSquare(unittest.TestCase):
 
     def test_str_return(self):
         """Test the return value of magic __str__()"""
-        s1 = Square(2)
-        self.assertEqual(s1.__str__(), '[Square] (13) 0/0 - 2')
+        s1 = Square(2, id=37)
+        self.assertEqual(s1.__str__(), '[Square] (37) 0/0 - 2')
     
+    def test_get_id_from_base(self):
+        """Checks if Square class has access to Base class's id
+           attribute"""
+        s1 = Square(2, id=1)
+        self.assertEqual(s1.id, 1)
+        self.assertEqual(Square(2, id=27).id, 27)
+
+    def test_base_id_does_not_reset(self):
+        """Checks if Square class has access to Base class's id
+           attribute and Base is aware"""
+        self.assertEqual(Base(id=1).id, 1)
+        self.assertEqual(Rectangle(2, 2, id=2).id, 2)
+
+
     def test_setter_methods_validation(self):
         """Test validity(setter validations) of setter methods"""
         size = 4
@@ -101,3 +102,5 @@ class TestSquare(unittest.TestCase):
         s8.update(**s7_dictionary)
         self.assertEqual(s8.__str__(), '[Square] (1) 2/1 - 10')
         self.assertFalse(s7 == s8)
+
+        

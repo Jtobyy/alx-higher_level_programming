@@ -16,14 +16,14 @@ class TestRectangle(unittest.TestCase):
     def test_base_id_does_not_reset(self):
         """Checks if Rectangle class has access to Base class's id
            attribute and Base is aware"""
-        self.assertEqual(Base().id, 2)
+        self.assertEqual(Base(id=2).id, 2)
     
     def test_get_id_from_base(self):
         """Checks if Rectangle class has access to Base class's id
            attribute"""
         r1 = Rectangle(2, 2, id=1)
         self.assertEqual(r1.id, 1)
-        self.assertEqual(Rectangle(4, 3).id, 3)
+        self.assertEqual(Rectangle(4, 3, id=3).id, 3)
 
     def test_setter_methods_validation(self):
         """Test validity(setter validations) of setter methods"""
