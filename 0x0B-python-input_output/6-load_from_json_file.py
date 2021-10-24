@@ -9,7 +9,11 @@ def load_from_json_file(filename):
     '''
     creates an object from a "JSON file"
     '''
-    with open(filename, 'r+') as f:
-        obj = f.read()
-        json_obj = json.loads(obj)
-    return json_obj
+    try:
+        with open(filename, encoding='utf_8') as f:
+            obj = f.read()
+            json_obj = json.loads(obj)
+    except FileNotFoundError:
+        with open(filename, 'w+', encoding='utf_8') as f:
+            json_obj = json.loads(obj)
+        return json_obj

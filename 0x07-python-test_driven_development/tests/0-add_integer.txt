@@ -1,0 +1,31 @@
+---------------------------
+How to use 0-add_integer.py
+---------------------------
+
+	usage: add_integer(a, b)
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(1, 2)
+	3
+	>>> add_integer(100, -2)
+	98
+
+	If the value of b is not given, default should be 98
+	>>> add_integer(2)
+	100
+	>>> add_integer(101.2, 5.3)
+	106
+	>>> add_integer(101.2, 0)
+	101
+	
+	If any of the argument is not an int or a float, a typerror
+	is raised with a message
+	>>> add_integer(2, "idi")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+	>>> add_integer("dif", 3)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+	>>> add_integer("dif", "idi")
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+

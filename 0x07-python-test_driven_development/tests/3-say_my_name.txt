@@ -1,0 +1,36 @@
+----------------------------------------------
+How to use 3-say_my_name.py and tests cases
+----------------------------------------------
+
+	usage: say_my_name(first_name, last_name)
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name("Jtoby", "Meyan")
+	My name is Jtoby Meyan
+	
+	first argument must be strings
+	>>> say_my_name(3, "Holla")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+	...
+	second argument must be strings
+	>>> say_my_name("Newt", 90)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+	...
+	both arguments must be strings
+	>>> say_my_name(80, 90)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+	...
+	If second argument was not given
+	>>> say_my_name("Holla") #doctest: +REPORT_NDIFF
+	My name is Holla 
+
+	>>> say_my_name()
+	Traceback (most recent call last):
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+	...
