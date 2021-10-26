@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Base class for other shapes"""
 import json
+import turtle
 
 
 class Base:
@@ -66,3 +67,39 @@ class Base:
                 obj_copy = cls.create(**instance)
                 list_of_instances.append(obj_copy)
         return list_of_instances
+
+    def save_to_file_csv(cls, list_objs):
+        """serializes in CSV"""
+        filename = cls.__name__+".csv"
+        with open(filename, "w+") as f:
+            pass
+            
+    def load_from_file_csv(cls):
+        """deserializes in CSV"""
+        filename = cls.__name__+".csv"
+        with open(filename, "w+") as f:
+            pass
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        window = turtle.Screen()
+            my_turtle = turtle.Turtle()
+            window.mainloop()
+        for rectangle in list_rectangles:
+            forward(rectangle.width)
+            right(90)
+            forward(rectangle.height)
+            left(90)
+            forward(rectangle.width)
+            right(90)
+            forward(rectangle.width)
+        
+        for square in list_squares:
+            forward(square.width)
+            right(90)
+            forward(square.height)
+            left(90)
+            forward(square.width)
+            right(90)
+            forward(square.height)
+            
