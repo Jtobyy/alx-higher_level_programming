@@ -1,1 +1,1 @@
-SHOW TABLE second_table mysql hbtn_0c_0
+INSERT INTO second_table (id, name, score) (5, George, 8) mysql hbtn_0c_0
