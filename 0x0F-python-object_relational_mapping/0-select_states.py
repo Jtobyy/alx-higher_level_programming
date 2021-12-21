@@ -23,5 +23,5 @@ for row in query_rows:
 cur.close()
 conn.close()
 
-if "__name__" == "__main__":
+if __name__ == "__main__":
     pass
