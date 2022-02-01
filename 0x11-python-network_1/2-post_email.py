@@ -28,4 +28,7 @@ def main():
 
 
 if __name__ == "__main__":
+    """
+    prevents code execution on importation
+    """
     main()
