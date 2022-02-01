@@ -7,8 +7,7 @@ from urllib.error import HTTPError
 import urllib.request
 import sys
 
-
-def main():
+if __name__ == "__main__":
     url = sys.argv[1]
     req = urllib.request.Request(url)
     try:
@@ -16,7 +15,3 @@ def main():
             html = response.read()
     except HTTPError as e:
         print(f'Error code: {e.code}')
-
-
-if __name__ == "__main__":
-    main()
