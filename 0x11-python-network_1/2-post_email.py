@@ -9,7 +9,7 @@ import urllib.request
 import sys
 
 
-def main():
+if __name__ == "__main__":
     """
     Takes in a URL and an email, sends a POST
     request to the passed URL with the email as a parameter,
@@ -25,10 +25,3 @@ def main():
         html = response.read()
 
     print(f'{html.decode("utf-8")}')
-
-
-if __name__ == "__main__":
-    """
-    prevents code execution on importation
-    """
-    main()
