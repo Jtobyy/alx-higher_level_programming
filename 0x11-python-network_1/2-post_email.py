@@ -15,7 +15,7 @@ def main():
     req = urllib.request.Request(url)
     values = {'email': email}
     data = urllib.parse.urlencode(values)
-    data = data.encode('ascii') # data should be bytes
+    data = data.encode('ascii')  # data should be bytes
     with urllib.request.urlopen(req) as response:
         html = response.read()
 
