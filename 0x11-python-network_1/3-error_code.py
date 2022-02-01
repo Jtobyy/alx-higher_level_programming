@@ -16,3 +16,5 @@ if __name__ == "__main__":
             print(html.decode('utf-8'))
     except urllib.error.HTTPError as e:
         print(f'Error code:{e.code}')
+    except:
+        pass
