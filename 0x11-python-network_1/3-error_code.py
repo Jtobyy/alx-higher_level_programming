@@ -3,11 +3,11 @@
 and displays the body of the response (decoded in utf-8).
 """
 
-from urllib.error import HTTPError
+import urllib.error
 import urllib.request
 import sys
 
-def main():
+if __name__ == "__main__":
     url = sys.argv[1]
     req = urllib.request.Request(url)
     try:
@@ -16,7 +16,3 @@ def main():
             print(html.decode('utf-8'))
     except urllib.error.HTTPError as e:
         print(f'Error code: {e.code}')
-
-
-if __name__ == "__main__":
-    main()
