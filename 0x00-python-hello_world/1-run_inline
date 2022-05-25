@@ -1,0 +1,2 @@
+#!/bin/bash
+chmod 777 $PYCODE | /usr/bin/python3 $PYCODE
