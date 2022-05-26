@@ -14,6 +14,8 @@ int check_cycle(listint_t *list)
 	size_t *arr;
 	size_t *temp_arr;
 
+	if (list == NULL || list->next == NULL)
+		return (0);
 	arr = malloc(sizeof(*arr) * 3);
 	arr[0] = (size_t)&(list);
 	arr[1] = (size_t)&(list->next);
