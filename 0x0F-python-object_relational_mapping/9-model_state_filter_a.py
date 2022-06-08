@@ -22,6 +22,6 @@ if __name__ == "__main__":
     session = Session()
 
     for state in session.query(State) \
-    .filter(State.name.ilike('%a%')) \
-    .order_by(State.id.asc()):
+                        .filter(State.name.ilike('%a%')) \
+                        .order_by(State.id.asc()):
         print(f"{state.id}: {state.name}")
