@@ -34,7 +34,6 @@ if __name__ == "__main__":
             print(row[0], end="")
             if row is not query_rows[-1]:
                 print(", ", end="")
-            else:
-                print()
+        print()
         cur.close()
         conn.close()
