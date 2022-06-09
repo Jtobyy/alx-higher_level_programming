@@ -21,7 +21,5 @@ if __name__ == "__main__":
 
     for state in session.query(State).order_by(State.id):
         print(f'{state.id}: {state.name}')
-        for city in session.query(City) \
-                           .filter(City.state_id == state.id)\
-                           .order_by(City.id):
+        for city in state.cities:
             print(f'\t{city.id}: {city.name}')
