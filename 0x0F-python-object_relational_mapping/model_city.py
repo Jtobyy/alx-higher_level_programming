@@ -8,6 +8,7 @@ from sqlalchemy.orm import relationship
 
 
 class City(Base):
+    """ City class model that maps to a cities table """
     __tablename__ = 'cities'
     id = Column(Integer, Sequence('city_id_seq'), primary_key=True,
                 nullable=False)
