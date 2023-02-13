@@ -10,6 +10,8 @@ def add_tuple(tuple_a=(), tuple_b=()):
             b = tuple_a[1] + 0
         elif len(tuple_b) > 1:
             b = tuple_b[1] + 0
+        else:
+            b = 0
 
     elif len(tuple_a) > 1:
         a = tuple_a[0]
