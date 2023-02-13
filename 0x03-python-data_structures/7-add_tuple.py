@@ -21,5 +21,5 @@ def add_tuple(tuple_a=(), tuple_b=()):
         b = tuple_b[1]
 
     else:
-        return ()
+        return (0, 0)
     return (a, b)
